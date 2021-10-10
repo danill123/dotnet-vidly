@@ -1,0 +1,21 @@
+@model vidly.ViewModels.MovieRandomVIew
+
+@{
+    @* ViewData["Title"] = "Random"; *@
+    Layout = "_Header";
+}
+
+<h2>customer name @Model.customer.Name</h2>
+
+<h3>movie name @Model.movie.Name</h3>
+
+@{
+    if(Model.customers.Count > 0) {
+        foreach (Customer customer in Model.customers)
+        {
+            <h3>@customer.Name</h3>
+        }
+    } else {
+        <h3>Customer Kosong Cuk</h3>
+    }
+}
